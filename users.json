@@ -1,10 +1,18 @@
 [
   {
-    "name": "Edgar Zboncak",
-    "phoneNumber": "61433868447",
-    "email": "edgar8665@yopmail.com",
-    "password": "SE4Niz71AV86q1M_1726670295911",
+    "name": "Millie Koch",
+    "phoneNumber": "61438458748",
+    "email": "millie6853@yopmail.com",
+    "password": "qhnVUHZQaVcr57O_1757779192153",
     "id": 1,
-    "register_token": "09383452-e151-4849-967b-d857b5586c76"
+    "register_token": "306700e5-b0a5-4164-811b-003de51bb598"
+  },
+  {
+    "name": "Pietro Hills",
+    "phoneNumber": "61431120942",
+    "email": "pietro2718@yopmail.com",
+    "password": "VHBDRHbaiWTIHye_1757780714905",
+    "id": 2,
+    "register_token": "e6f0e22f-0ed1-41e7-937f-f8b72a078b96"
   }
 ]

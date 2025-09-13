@@ -14,7 +14,6 @@ router.put('/', (req, res) => {
   } catch (err) {
     // Ignore errors if the file doesn't exist
   }
-  
 
   // Find the user index
   const userIndex = usersData.findIndex(user => user.id === parseInt(id));
@@ -30,11 +29,23 @@ router.put('/', (req, res) => {
     ...usersData[userIndex],
     ...updatedData,
   };
-  
+
+  const updatedUser = usersData[userIndex]
+
+  // Create a response object without the password
+  const responseUser = {
+    id: updatedUser.id,
+    name: updatedUser.name,
+    phoneNumber: updatedUser.phoneNumber,
+    email: updatedUser.email,
+    register_token: updatedUser.register_token
+    // Omit the password
+  };
+
   // Write the updated data to the file
   fs.writeFileSync('users.json', JSON.stringify(usersData, null, 2));
   
-  res.status(201).json({ message: 'User updated successfully', user: usersData[userIndex] });
+  res.status(201).json({ message: 'User updated successfully', user: responseUser });
   console.log('Edited User:', req.body);
 });
 
