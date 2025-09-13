@@ -22,13 +22,26 @@ router.delete('/', (req, res) => {
     return res.status(404).json({ error: 'User not found' });
   }
 
+  // Store the deleted user data before removing it
+  const deletedUser = usersData[userIndex];
+
   // Remove the user from the array
   usersData.splice(userIndex, 1);
 
   // Write the updated data to the file
   fs.writeFileSync('users.json', JSON.stringify(usersData, null, 2));
 
-  res.status(200).json({ message: 'User deleted successfully' });
+  // Create a response object without the password
+  const responseUser = {
+    id: deletedUser.id,
+    name: deletedUser.name,
+    phoneNumber: deletedUser.phoneNumber,
+    email: deletedUser.email,
+    register_token: deletedUser.register_token
+    // Omit the password
+  };
+
+  res.status(200).json({ message: 'User deleted successfully', user: responseUser });
   console.log('Deleted Id:', id)
 });
 

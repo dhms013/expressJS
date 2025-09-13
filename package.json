@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "clear && rm users.json && node index.js"
+    "test": "clear && rm users.json && nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "express": "^4.19.2",
+    "nodemon": "^3.1.10",
     "uuid": "^10.0.0"
   }
 }
